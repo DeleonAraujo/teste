@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react';
+export default function Formulario(){
+	const [nome, setNome] = useState('nome');
+	const [idade, setIdade] = useState('idade');
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<>
+			<div className='form'>
+				<p>Formulario</p>
+				<input value={nome} onChange={e => setNome(e.target.value)}/>
+				<br/><br/>
+				<input value={idade} onChange={f => setIdade(f.target.value)}/>
+				<br/><br/>				
+				<p>Olá, {nome}. Você tem {idade} anos</p>
+			</div>	
+		</>
+	);
 }
-
-export default App;
